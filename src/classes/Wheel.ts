@@ -6,6 +6,7 @@ class Wheel {
 
   // Constructor for the Wheel class
   constructor(diameter: number = 18, tireBrand: string = "GoodYear") {
+    // GoodYear is the default tire brand and 18 is the default diameter
     this.diameter = diameter;
     this.tireBrand = tireBrand;
   }

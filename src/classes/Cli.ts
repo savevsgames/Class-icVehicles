@@ -302,12 +302,22 @@ class Cli {
       ])
       .then((answers) => {
         // TODO: check if the selected vehicle is the truck
-        if (answers.vehicleToTow === "Truck") {
+        if (answers.vehicleToTow instanceof Truck) {
           // TODO: if it is, log that the truck cannot tow itself then perform actions on the truck to allow the user to select another action
           console.log("The truck cannot tow itself");
           this.performActions();
         } else {
           // TODO: if it is not, tow the selected vehicle then perform actions on the truck to allow the user to select another action
+          const towingVehicle = this.vehicles.find((vehicle) => {
+            return vehicle.vin === this.selectedVehicleVin;
+          });
+          if (towingVehicle instanceof Truck) {
+            towingVehicle.tow(answers.vehicleToTow);
+            console.log(
+              `The ${towingVehicle.year} ${towingVehicle.make} ${towingVehicle.model} truck is towing the ${answers.vehicleToTow.year} ${answers.vehicleToTow.make} ${answers.vehicleToTow.model}`
+            );
+          }
+
           this.performActions();
         }
       });
@@ -405,6 +415,8 @@ class Cli {
               if (this.vehicles[i] instanceof Truck) {
                 this.findVehicleToTow();
                 return;
+              } else {
+                console.log("Only trucks can tow other vehicles");
               }
             }
           }
@@ -417,6 +429,8 @@ class Cli {
               if (this.vehicles[i] instanceof Motorbike) {
                 // Cast the vehicle to a Motorbike and call the wheelie method
                 (this.vehicles[i] as Motorbike).wheelie();
+              } else {
+                console.log("Only motorbikes can do a wheelie");
               }
             }
           }

@@ -94,7 +94,7 @@ If you have any questions or issues, please:
 
 - [GitHub Repository](https://github.com/savevsgames/Class-icVehicles)
 - [My GitHub Profile](https://github.com/savevsgames)
-- [Walkthrough Video](linkforvideo) <!-- video link will go here -->
+- [Walkthrough Video](https://drive.google.com/file/d/1zj_MOOCLGdUpy_XJIS4wfReM39nebxHB/view?usp=sharing)
 
 ### Helpful TypeScript Resources
 

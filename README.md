@@ -80,7 +80,6 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Acknowledgments
 
-- Thanks to all contributors who have helped shape this project.
 - Special thanks to the open-source community for their invaluable resources and tools.
 
 ## Questions
